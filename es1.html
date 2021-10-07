@@ -3,7 +3,39 @@
     <title>ES 1</title>
   </head>
   <body>
-    <button onclick="function() {
-        console.log('click')}">cliccami </button>
-  </body>
+    <button onclick="(function() {
+        console.log('click')})()">clicca da evento </button>
+
+    <button onclick="funzione_Click()">click da script </button>
+
+    <button id="btn3">cliccami da listener </button>
+
+ 
+  <script>
+var funzione_Click = function(){   
+  //operazioni
+  console.log("click da script")
+}
+//funzione_Click(); //mi aspettto di trovare un click da script sulla console
+//non è obbligatorio mettere i punti e virgola ma consigliato
+
+
+/*
+se voglio dichiarare e avviare una funzione (self declaration and execution)
+var funzione_Click = (function(){   
+  //operazioni
+  console.log("click da script")
+})();
+*/
+
+var funzione_Click_Ascoltatore = function() {
+  console.log("Click da listener")
+}; //TODO unica funzione
+
+var bottone3 = document.getElementById("btn3");
+bottone3.addEventListener("click",funzione_Click_Ascoltatore)
+
+
+  </script>
+   </body>
 </html>
