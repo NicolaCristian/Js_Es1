@@ -6,7 +6,7 @@
     <button onclick="(function() {
         console.log('click')})()">clicca da evento </button>
 
-    <button onclick="funzione_Click()">click da script </button>
+    <button onclick="funzione_Click('script')">click da script </button>
 
     <button id="btn3">cliccami da listener </button>
 
@@ -28,14 +28,14 @@ var funzione_Click = (function(){
 })();
 */
 
-var funzione_Click_Ascoltatore = function() {
-  console.log("Click da listener")
+var funzione_Click_Ascoltatore = function(stringa) {   //non devo dichiarare basta solo il nome
+  console.log("Click da "+ stringa)
 }; //TODO unica funzione
 
 var bottone3 = document.getElementById("btn3");
-bottone3.addEventListener("click",funzione_Click_Ascoltatore)
+bottone3.addEventListener("click",
+function() {funzione_Click_Ascoltatore('listener')}) //gli sto passando la definizione di funzione
 
-
-  </script>
+ </script>
    </body>
 </html>
