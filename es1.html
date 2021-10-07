@@ -8,7 +8,15 @@
 
     <button onclick="funzione_Click('script')">click da script </button>
 
+     <div id="div1">
+<p>non cliccare</p>
+     </div>
+
+
+
     <button id="btn3">cliccami da listener </button>
+
+
 
  
   <script>
@@ -32,10 +40,26 @@ var funzione_Click_Ascoltatore = function(stringa) {   //non devo dichiarare bas
   console.log("Click da "+ stringa)
 }; //TODO unica funzione
 
+var rosso=false;
 var bottone3 = document.getElementById("btn3");
 bottone3.addEventListener("click",
-function() {funzione_Click_Ascoltatore('listener')}) //gli sto passando la definizione di funzione
+function() {
+  funzione_Click_Ascoltatore('listener') //gli sto passando la definizione di funzione
 
+  var div1 = document.getElementById("div1").innerHTML = "<h1>NON DOVEVI SCHIACCIARE</h1>";
+
+div_1
+
+  div1.setAttribute()
+
+  if(rosso===false){
+    bottone3.setAttribute("style","background-color:red")
+    rosso=true;
+  }else {
+    bottone3.removeAttribute("style");
+    rosso=false;
+  } 
+});
  </script>
    </body>
 </html>
